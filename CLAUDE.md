@@ -4,6 +4,7 @@ This file provides guidance for working with the Time Will Tell web application.
 
 ## Build Commands
 
+All commands should be run from the `web-app` directory:
 - `npm install`: Install dependencies.
 - `npm run dev`: Start development server.
 - `npm run build`: Build for production.

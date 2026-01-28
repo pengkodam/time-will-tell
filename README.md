@@ -20,27 +20,32 @@ A simple web application to help speakers track their remaining time with color-
 
 ### Local Development
 
-1. Install dependencies:
+1. Navigate to the web-app directory:
+   ```bash
+   cd web-app
+   ```
+2. Install dependencies:
    ```bash
    npm install
    ```
-2. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
-3. Open [http://localhost:5173](http://localhost:5173) in your browser.
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Building for Production
 
 ```bash
+cd web-app
 npm run build
 ```
 
-The build artifacts will be in the `dist/` directory.
+The build artifacts will be in the `web-app/dist/` directory.
 
 ## Deployment
 
-This app is optimized for deployment on [Vercel](https://vercel.com). Simply connect your GitHub repository to Vercel and it will automatically detect the Vite configuration.
+This app is optimized for deployment on [Vercel](https://vercel.com). When connecting your repository to Vercel, set the **Root Directory** to `web-app`. Vercel will then automatically detect the Vite configuration.
 
 ## Credits
 
