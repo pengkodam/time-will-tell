@@ -2,44 +2,43 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Time Will Tell is a talk timer app for iOS.
+Time Will Tell is a talk timer web application.
 
 ## Build Commands
 
-Build for simulator:
+Install dependencies:
 ```bash
-xcodebuild -project TalkTimer.xcodeproj -scheme TalkTimer -sdk iphonesimulator build
+npm install
 ```
 
-Build and run on iOS Simulator:
+Start development server:
 ```bash
-xcodebuild -project TalkTimer.xcodeproj -scheme TalkTimer -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15' build
-xcrun simctl boot "iPhone 15"
-xcrun simctl install booted ~/Library/Developer/Xcode/DerivedData/TalkTimer-*/Build/Products/Debug-iphonesimulator/TalkTimer.app
-xcrun simctl launch booted com.talktimer.app
+npm run dev
+```
+
+Build the project:
+```bash
+npm run build
+```
+
+Run linting:
+```bash
+npm run lint
 ```
 
 ## Architecture
 
-This is a SwiftUI iOS app using MVVM architecture. The app is locked to landscape orientation.
+This is a React application built with TypeScript and Vite.
 
-**Core Flow:**
-- `TalkTimerApp` → `TimerView` (main screen) → `SettingsView` (modal sheet)
-- `TimerViewModel` manages all timer logic and publishes state changes
-- Settings are persisted via `@AppStorage` in `TimerView` and passed to the view model
+**Core Components:**
+- `App.tsx`: Main entry point and UI layout. Handles side effects like audio, haptics, and wake lock.
+- `hooks/useTalkTimer.ts`: Core timer logic and state management.
+- `utils/time.ts`: Formatting utilities for the timer display.
 
 **Timer Zones:**
 The timer transitions through color-coded zones based on remaining time:
-- Black (safe) → Yellow (warning threshold) → Red (danger threshold) → Flashing (time's up)
-- Zone thresholds are configurable; transitions trigger haptic feedback via `HapticManager`
-
-**Display Logic:**
-- Always shows MM:SS format
-- `ScalableTimerText` auto-scales text to fill available screen space
+- Safe (Black) -> Warning (Yellow) -> Danger (Red) -> Overtime (Flashing Red/White)
 
 ## Code Style
 
-After adding or modifying Swift code, run the formatter:
-```bash
-swiftformat .
-```
+This project uses ESLint for code quality and follows standard React/TypeScript patterns.
