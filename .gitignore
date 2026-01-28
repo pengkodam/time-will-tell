@@ -1,37 +1,24 @@
-# macOS
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Xcode
-build/
-DerivedData/
-*.xcuserstate
-*.xccheckout
-*.xcscmblueprint
-xcuserdata/
-contents.xcworkspacedata
-
-# Swift Package Manager
-.swiftpm/
-Packages/
-Package.pins
-Package.resolved
-
-# CocoaPods (if used)
-Pods/
-
-# Carthage (if used)
-Carthage/Build/
-
-# fastlane (if used)
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output/
-
-# Code Injection
-iOSInjectionProject/
-
-# Personal
-submission.todo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
