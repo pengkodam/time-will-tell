@@ -62,10 +62,12 @@ function App() {
 
   // Wake Lock
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let wakeLock: any = null;
     const requestWakeLock = async () => {
       if ('wakeLock' in navigator) {
         try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           wakeLock = await (navigator as any).wakeLock.request('screen');
         } catch (err) {
           console.log('Wake Lock error:', err);
@@ -78,7 +80,9 @@ function App() {
     }
 
     return () => {
-      if (wakeLock) wakeLock.release();
+      if (wakeLock && typeof wakeLock.release === 'function') {
+        wakeLock.release();
+      }
     };
   }, [status]);
 
@@ -98,7 +102,7 @@ function App() {
     return 'var(--color-text-light)'; // White text on Black/Red
   };
 
-  const isFlash = zone === 'overtime' && Math.floor(Date.now() / 500) % 2 === 0;
+  const isFlash = zone === 'overtime' && Math.floor(Math.abs(remainingTime) * 2) % 2 === 0;
 
   return (
     <div

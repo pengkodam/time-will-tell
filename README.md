@@ -1,27 +1,50 @@
 # Time Will Tell
 
-A simple iOS app to help speakers track their remaining time with color-coded visual warnings.
+A simple web app to help speakers track their remaining time with color-coded visual warnings. This is a web port of [hadley/time-will-tell](https://github.com/hadley/time-will-tell).
 
 ## Features
 
-- Large countdown display visible from across the room
-- Color-coded backgrounds:
-  - **Black**: Safe zone - plenty of time remaining
-  - **Yellow**: Warning - approaching the end
+- **Large countdown display**: Highly visible from across the room.
+- **Color-coded backgrounds**:
+  - **Black**: Safe zone - plenty of time remaining.
+  - **Yellow**: Warning - approaching the end.
   - **Red**: Danger - wrap it up!
   - **Flashing**: Time's up!
-- Haptic vibration alerts when entering warning zones
-- Optional gong sound when time is up
-- Configurable talk duration and warning thresholds
-- Screen stays awake during countdown
-- Background support: timer continues running when app is backgrounded
-- Push notifications for threshold warnings when in background
+- **Audio Alerts**: Gong sound plays when time is up.
+- **Haptic Feedback**: Vibration alerts on supported devices when entering warning zones.
+- **Screen Wake Lock**: Keeps the screen awake during the countdown (on supported browsers).
+- **Fully Configurable**: Set your total talk duration and warning/danger thresholds.
 
-## Screenshots
+## Getting Started
 
-![Black - Safe zone](appstore/screenshot-black.png)
-![Yellow - Warning](appstore/screenshot-orange.png)
-![Red - Danger](appstore/screenshot-red.png)
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- npm
+
+### Installation
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Technology Stack
+
+- **Framework**: React 19
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Deployment**: Optimized for Vercel
 
 ## Credits
 
