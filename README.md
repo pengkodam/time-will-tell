@@ -1,28 +1,48 @@
-# Time Will Tell
+# Time Will Tell (Web)
 
-A simple iOS app to help speakers track their remaining time with color-coded visual warnings.
+A simple web application to help speakers track their remaining time with color-coded visual warnings. This is a port of the [original iOS app](https://github.com/hadley/time-will-tell).
 
 ## Features
 
-- Large countdown display visible from across the room
-- Color-coded backgrounds:
-  - **Black**: Safe zone - plenty of time remaining
-  - **Yellow**: Warning - approaching the end
+- **Large countdown display**: Highly visible from across the room.
+- **Color-coded backgrounds**:
+  - **Black**: Safe zone - plenty of time remaining.
+  - **Yellow**: Warning - approaching the end.
   - **Red**: Danger - wrap it up!
   - **Flashing**: Time's up!
-- Haptic vibration alerts when entering warning zones
-- Optional gong sound when time is up
-- Configurable talk duration and warning thresholds
-- Screen stays awake during countdown
-- Background support: timer continues running when app is backgrounded
-- Push notifications for threshold warnings when in background
+- **Haptic vibration alerts**: Vibrates when entering warning zones (on supported devices/browsers).
+- **Gong sound**: Optional gong sound when time is up.
+- **Configurable**: Easily set talk duration and warning thresholds.
+- **Screen Wake Lock**: Prevents the screen from dimming or locking during countdown (on supported browsers).
+- **Mobile Friendly**: Designed to work well on mobile browsers.
 
-## Screenshots
+## Getting Started
 
-![Black - Safe zone](appstore/screenshot-black.png)
-![Yellow - Warning](appstore/screenshot-orange.png)
-![Red - Danger](appstore/screenshot-red.png)
+### Local Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+The build artifacts will be in the `dist/` directory.
+
+## Deployment
+
+This app is optimized for deployment on [Vercel](https://vercel.com). Simply connect your GitHub repository to Vercel and it will automatically detect the Vite configuration.
 
 ## Credits
 
-Gong sound by [juskiddink](https://freesound.org/people/juskiddink/) from [Freesound](https://freesound.org/people/juskiddink/sounds/86773/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- Original iOS app by [Hadley Wickham](https://github.com/hadley).
+- Gong sound by [juskiddink](https://freesound.org/people/juskiddink/) from [Freesound](https://freesound.org/people/juskiddink/sounds/86773/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

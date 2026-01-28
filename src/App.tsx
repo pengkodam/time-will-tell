@@ -62,11 +62,11 @@ function App() {
 
   // Wake Lock
   useEffect(() => {
-    let wakeLock: any = null;
+    let wakeLock: WakeLockSentinel | null = null;
     const requestWakeLock = async () => {
       if ('wakeLock' in navigator) {
         try {
-          wakeLock = await (navigator as any).wakeLock.request('screen');
+          wakeLock = await navigator.wakeLock.request('screen');
         } catch (err) {
           console.log('Wake Lock error:', err);
         }
@@ -98,7 +98,7 @@ function App() {
     return 'var(--color-text-light)'; // White text on Black/Red
   };
 
-  const isFlash = zone === 'overtime' && Math.floor(Date.now() / 500) % 2 === 0;
+  const isFlash = zone === 'overtime' && Math.floor(remainingTime * -2) % 2 === 0;
 
   return (
     <div
